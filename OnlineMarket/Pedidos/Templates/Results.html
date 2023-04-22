@@ -1,0 +1,27 @@
+<html>
+
+<head>  
+    <title>Resultados busqueda</title>
+</head>
+<body>
+
+    <p>Estas buscando: <strong>{{query}}</strong></p>
+    {% if articulos%}
+        <p>Artículos encontrados: {{articulos|length}} artículos</p>
+        <ul>
+            {% for articulo in articulos %}
+                <li>
+                    <a href="/ProductDetail/?prd={{articulo.id}}">{{articulo.nombre}}   |  &NonBreakingSpace; {{articulo.seccion}} | &NonBreakingSpace; Q.{{articulo.precio}}.00</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        
+        <p>No se encontraron artículos</p>
+    {% endif %}
+
+</body>
+
+
+
+</html>

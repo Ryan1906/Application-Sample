@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi foro</title>
+  <style>
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 5px solid #ddd;
+  padding-left: 10px;
+}
+
+/* Fuente Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+      h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+    margin-left: 20px;
+  }
+
+  /* Estilos para el formulario de creación de hilos */
+  form {
+    margin-bottom: 2rem;
+  }
+  main{
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="text"],
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button[type="submit"] {
+    background-color: #1da1f2;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  /* Estilos para la lista de hilos de discusión */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+   
+  }
+
+.contenedor_hilos{
+    background-color: #1da1f2;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: #000000 0 0 10px;
+    border-radius: 20px;
+}
+
+  li
+.hilos{
+    background-color: #dadada;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 30px;
+    box-shadow: #000000 0 0 10px;
+}
+
+  a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2a2a2a;
+  }
+
+  span {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #777;
+  }
+
+  span:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Estilos para el elemento "li" que contiene lo nuevo */
+  li.new {
+    background-color: #ffc107;
+  }
+
+  li.new a {
+    color: #fff;
+  }
+
+
+    
+  </style>
+  <header>
+    {% include 'navbar.html' %}
+  </header>
+</head>
+
+
+    <!-- Aquí puede ir la barra de navegación o un encabezado común para todas las páginas -->
+   
+
+  <body>  
+  <main>
+    <h1>Foro de discusión</h1>
+    
+    <!-- Formulario para crear un nuevo hilo de discusión -->
+    <form action=" " method="post">
+    {% csrf_token %}
+      <label for="titulo">Título del hilo:</label>
+      <input type="text" id="titulo" name="titulo">
+      
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje"></textarea>
+      
+      <button type="submit">Crear hilo</button>
+    </form>
+    
+    <!-- Lista de hilos de discusión -->
+    <ul class="contenedor_hilos">
+      <li>
+        <ul>
+            {% for hilo in hilos %}
+            <li class="hilos">
+              <a href="#">{{ hilo.titulo }}</a>
+              <p>{{ hilo.contenido }}</p>
+              <p>{{hilo.autor}}   </p>
+
+              <span>Última respuesta: {{ hilo.fecha }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+  </main>
+  
+  <footer>
+    <!-- Aquí puede ir el pie de página común para todas las páginas -->
+    {% include 'footer.html' %}
+  </footer>
+</body>
+</html>

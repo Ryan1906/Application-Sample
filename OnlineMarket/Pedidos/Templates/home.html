@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <style>
+    /* Estilos para el header y la navegación */
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 5px solid #ddd;
+  padding-left: 10px;
+}
+
+/* Fuente Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    
+    /* Estilos para la sección "featured" */
+    .featured {
+        
+        padding: 20px 70px;
+        background-color: #000000;
+        color: #ddd;
+      }
+
+      .featured h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 48px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ddd;
+      }
+
+      /* Fuente Roboto */
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+    .featured-Perfil{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-top: -100px;
+      box-shadow: #333 0 0 10px;
+      
+    }
+    
+    /* Estilos para la sección "recent-posts" */
+    .recent-posts {
+      background-color: #1da1f2;
+      padding: 10px 50px 50px 50px;; 
+      color: #ffffff;
+      border-radius: 20px;
+    }
+    
+    .recent-posts h2 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    
+    .recent-posts ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .recent-posts li {
+      margin-bottom: 10px;
+    }
+    
+    /* Estilos para la sección "newsletter" */
+
+    .post-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+
+.post-card {
+  margin-top: 20px;
+  width: calc(33.33% - 80px);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: #333 0 0 10px;
+  height: auto;
+  transition: background-color 0.3s ease;
+  background-color: rgb(205, 205, 205);
+  
+  
+}
+
+.recent-posts h2{
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  
+}
+
+
+.post-card a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  
+}
+
+.post-card img {
+
+  width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.post-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+.post-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  height: 100px; /* Establecer la altura deseada */
+  overflow: auto;
+}
+.post-card:hover {
+  background-color: #ffffff;
+  color: white;
+}
+
+.post-card:active {
+  background-color: #ffffff;
+}
+
+
+  </style>
+
+</head>
+<body>
+  <header>
+    {% include 'navbar.html' %}
+  </header>
+  <main>
+    <section class="featured">
+      
+      <h1>BIENVENIDO A MI BLOG</h1>
+      <p>This site will show you some tips that can help you in your career as a systems engineer</p>
+      <p> I hope this can be helpful in your studies, and if you need help, you can leave a message</p>
+      <img class="featured-Perfil" src="/media/images/perfil.png" style="float: right;">
+    </section>
+    <section class="recent-posts">
+      <h2>CONTENIDO</h2>
+      <div class="post-container">
+        {% for post in posts %}
+        <div class="post-card">
+          <a href="#">
+            <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+            <h3>{{ post.titulo }}</h3>
+            <p>{{ post.contenido|truncatewords:20 }}</p>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+    </section>
+
+    {% include 'footer.html' %}
+
+</body>
