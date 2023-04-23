@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <head>
+        <style>
+       
+
+/* Estilos para los títulos */
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #333;
+    margin-top: 50px;
+}
+
+/* Estilos para las secciones */
+section {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Estilos para la sección "Sobre mí" */
+#sobre-mi ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+#sobre-mi li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para la sección "Proyectos" */
+#proyectos ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+#proyectos li {
+    margin-bottom: 30px;
+}
+
+#proyectos h3 {
+    margin-bottom: 10px;
+}
+
+#proyectos a {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#proyectos a:hover {
+    background-color: #555;
+}
+
+/* Estilos para la sección "Contacto" */
+#contacto ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+#contacto li {
+    margin-bottom: 10px;
+}
+
+#contacto a {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+</style>
+</head>
+
+    
+</head>
+<body>
+    <header class="animate__animated animate__fadeInDown">
+        {% include 'navbar.html' %}
+    </header>
+    
+    <main>
+        <div class="container" style="background-color: #F5F5F5;">
+            <div class="row">
+              <div class="col-md-6">
+                <h1>RYAN SIGUENZA</h1>
+                <p>¡Hola! Mi nombre es Ryan Siguenza, soy un estudiante de la carrera de Ingeniería en sistemas en la Universidad de San Carlos
+                          de Guatemala. Siempre ha sido mucho de interés para mi el desarrollo de software, por lo que decidí estudiar esta carrera.
+                          Actualmente estoy en el tercer año de la carrera y me encuentro en la búsqueda de una oportunidad laboral para poder
+                          aplicar mis conocimientos y aprender más sobre el desarrollo de software.</p>
+              </div>
+              <div class="col-md-6 text-center">
+                <img class="featured-Perfil" src="/media/images/perfil.png" >
+              </div>
+            </div>
+          </div>
+          
+      
+       
+        <section id="sobre-mi" class="animate__animated animate__fadeInUp">
+            <h2>Sobre mí</h2>
+            <p>
+                Siempre he sido un fan de la tecnología, y siempre me ha gustado pensar en soluciones para miles de problemas que nos encontramos,
+                siempre me gustó hacerme de alguna manera el trabajo más fácil, y esta carrera es perfecta para mí, ya que puedo brindar soluciones
+                a problemas que muchas veces no se ven a simple vista.
+
+            </p>
+            <p>Soy una persona que se caracteriza por buscar las maneras de como hacer algo que muchos ven imposible, siempre me gusta
+                aprender cosas nuevas y me gusta mucho el trabajo en equipo. En mi carrera he demostrado que soy capaz de muchas cosas, 
+                entre ellas el poder trabajar bajo presión y cumplir con los plazos establecidos. Eso me ha permitido avanzar en mi carrera
+                y aunque actualmente me encuentro en el tercer año de la carrera, tengo la posibilidad de terminar mi pensum en un año menos 
+                al tiempo que se establece.
+            </p>
+            <ul>
+                <li><strong>Nombre:</strong> Ryan José Rodrigo Siguenza Huertas</li>
+                <li><strong>Edad:</strong> 19 años</li>
+                
+            </ul>
+        </section>
+        <section id="proyectos" class="animate__animated animate__fadeInUp" style="background-color: #f2f2f2;">
+            <h2>Proyectos</h2>
+            <p>A lo largo de mi carrera, he realizado varios proyectos, en distintos lenguajes de programación, entre ellos:</p>
+            <ul>
+              <li>- Java</li>
+              <li>- Python</li>
+              <li>- JavaScript</li>
+              <li>- GOLANG</li>
+              <li>- C#</li>
+              <li>- C++</li>
+              <!-- Agregar más lenguajes según sea necesario -->
+            </ul>
+            
+          </section>
+            <section id="proyectossample" class="animate__animated animate__fadeInUp" >
+                <p>Estos son algunos de los proyectos que he realizado:</p>
+            <ul>
+              <li class="animate__animated animate__fadeInUp">
+                <h3>Proyecto 1</h3>
+                <p>Este proyecto consiste en realizar un programa que simule al sitio web "Google Drive", donde podamos almacenar archivos
+                  en localStorage y poder acceder a ellos desde cualquier navegador. Este proyecto está en github pages, lo que permite
+                  el ingreso desde cualquier computador. Además este proyecto permite al administrador el crear los usuarios, y que cada
+                  uno de los usuarios pueda acceder a su carpeta personal, donde podrá subir archivos y descargarlos. Este proyecto aún
+                  se desarrolla, y la siguiente version tendrá la capacidad de visualizar archivos compartidos, como también la capacidad
+                  de mandar mensajes a otros usuarios.
+          
+                  Para la realización de este proyecto se utilizó el lenguaje de programación JavaScript, junto con archivos html y css.
+          
+                  Si desea ver el proyecto, puede hacerlo desde el siguiente enlace utilizando "admin" para ambos apartados:
+                </p>
+                <a href="https://ryan1906.github.io/EDD_1S2023_PY_202100101/">Ver proyecto</a>
+              </li>
+              <li>
+                <h3>Proyecto 2</h3>
+                <p>El siguiente proyecto trata de la creación de un compilador, el cual permite el ingreso de código, de una manera diferente a
+                  otros lenguajes, este proyecto consta de un análisis sintáctico y léxico, el cual permite la creación de un árbol de sintaxis
+                  además de otras estructuras que permiten ver el proceso de un compilador. Este proyecto se realizó en el lenguaje de programación
+                  JAVA:
+                </p>
+                <a href="https://github.com/Ryan1906/OLC1-202100101-PROYECTO1.git">Ver proyecto</a>
+              </li>
+              <p>
+                Para revisar más proyectos, puede hacerlo desde mi perfil de github:
+              </p>
+              <a href="https://github.com/Ryan1906">Ver perfil</a>
+              <!-- Agregar más proyectos según sea necesario -->
+            </ul>
+          </section>
+        
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de los siguientes medios:</p>
+            <ul>
+                <li><strong>Correo electrónico:</strong> rjrshuertas@gmail.com</li>
+                <li><strong>Teléfono:</strong> +502 55690625</li>
+                <li><strong>Redes sociales:</strong></li>
+                <ul>
+                    <li><a href="https://github.com/Ryan1906">github</a></li>
+                    
+                    <!-- Agregar más redes sociales según sea necesario -->
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; [año actual] - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

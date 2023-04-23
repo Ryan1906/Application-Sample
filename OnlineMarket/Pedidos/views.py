@@ -114,3 +114,7 @@ def foro(request):
     }
 
     return render(request, 'forum.html', context)
+
+
+def portofolio(request):
+    return render(request, 'portofolio.html')
